@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  client: 
+    container_name: client-dev
+    image: client-dev
+    build:
+      context: ./client
+      target: development
+    volumes: 
+      - ./client/src:/client/src
+    ports:
+      - 3000:3000
