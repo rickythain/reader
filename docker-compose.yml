@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  client: 
+    container_name: client
+    image: client
+    build:
+      context: ./client
+    volumes: 
+      - ./client/src:/client/src
+    ports:
+      - 3000:3000
+  api:
+    container_name: api
+    image: api
+    build:
+      context: ./server/api
+    ports:
+      - 3001:3001
