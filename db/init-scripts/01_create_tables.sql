@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS book (
+  isbn INT PRIMARY KEY,
+  title VARCHAR
+);
+
+
