@@ -9,11 +9,11 @@ CREATE TABLE IF NOT EXISTS author (
 );
 
 CREATE TABLE IF NOT EXISTS book_author (
-  book_author_id VARCHAR PRIMARY KEY
-  isbn VARCHAR
-  author_id VARCHAR
+  book_author_id VARCHAR PRIMARY KEY,
+  isbn VARCHAR,
+  author_id VARCHAR,
 
-  FOREIGN KEY (isbn) REFERENCES book(isbn)
+  FOREIGN KEY (isbn) REFERENCES book(isbn),
   FOREIGN KEY (author_id) REFERENCES author(author_id)
 );
 
