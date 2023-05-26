@@ -6,15 +6,15 @@ VALUES  ('9780743273565', 'The Great Gatsby'),
         ('9780141439518', 'Pride and Prejudice'),
         ('9780261103344', 'The Hobbit'),
         ('9780141439662', 'Sense and Sensibility'),
-        ('9780062409867', 'Go Set a Watchman')
+        ('9780062409867', 'Go Set a Watchman'),
         ('9780060731335', 'Freakonomics: A Rogue Economist Explores the Hidden Side of Everything'),
         ('9780062315007', 'The Alchemist');
 
 INSERT INTO author (author_id, author_name)
 VALUES  ('aaaaa00000', 'F. Scott Fitzgerald'),
         ('aaaaa00001', 'Harper Lee'),
-        ('aaaaa00002', 'Ray Bradbury')
-        ('aaaaa00003', 'George Orwell')
+        ('aaaaa00002', 'Ray Bradbury'),
+        ('aaaaa00003', 'George Orwell'),
         ('aaaaa00004', 'Jane Austen'),
         ('aaaaa00005', 'J.R.R. Tolkien'),
         ('aaaaa00006', 'Steven D. Levitt'),
