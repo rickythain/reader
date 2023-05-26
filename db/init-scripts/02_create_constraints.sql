@@ -9,4 +9,4 @@ ALTER TABLE author
 ALTER TABLE book_author
     ADD CONSTRAINT chk_bookAuthorId_length CHECK (LENGTH(book_author_id) = 10),
     ADD CONSTRAINT chk_isbn_length CHECK (LENGTH(isbn) IN (10, 13)),
-    ADD CONSTRAINT chk_authorId_length CHECK (LENGTH(author_id) = 10),
+    ADD CONSTRAINT chk_authorId_length CHECK (LENGTH(author_id) = 10);
