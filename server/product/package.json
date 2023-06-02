@@ -1,0 +1,6 @@
+{
+    "name": "product-node",
+    "dependencies": {
+        "express": "^4.17.1"
+    }
+}
