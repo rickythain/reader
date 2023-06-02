@@ -12,6 +12,8 @@ services:
     volumes:
       - ./db/init-scripts:/docker-entrypoint-initdb.d
       - db-data:/var/lib/postgresql/data
+    networks:
+      - network-general
   client: 
     container_name: client
     image: client
@@ -28,5 +30,17 @@ services:
       context: ./server/api
     ports:
       - 3001:3001
+  product:
+    container_name: product
+    image: product
+    build:
+      context: ./server/product
+    ports:
+      - 3002:3002
+    networks:
+      - network-general
 volumes:
   db-data:
+
+networks:
+  network-general:
