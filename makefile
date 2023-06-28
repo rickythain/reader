@@ -14,3 +14,10 @@ build:
 
 clean:
 	docker compose down -v --rmi all --remove-orphans
+
+stop-remove-single:
+	docker stop $(CONTAINER) || true
+	docker rm $(CONTAINER) || true
+
+delete-image:
+	docker rmi ${IMAGE} 
