@@ -32,9 +32,15 @@ services:
       - 3001:3001
   product:
     container_name: product
+    depends_on:
+      - db
     image: product
     build:
       context: ./server/product
+    volumes:
+      - ./.config.json:/product/.config.json
+    environment:
+      - CONFIG_FILE_PATH=/product/.config.json
     ports:
       - 3002:3002
     networks:
