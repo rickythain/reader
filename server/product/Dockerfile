@@ -4,4 +4,4 @@ COPY package.json .
 RUN npm install
 COPY . .
 CMD ["node", "product.js"]
-EXPOSE 3002
+EXPOSE 50051

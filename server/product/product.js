@@ -1,3 +1,9 @@
+const path = require('path');
+const grpc = require('@grpc/grpc-js');
+const protoLoader = require('@grpc/proto-loader');
+const packageDefinition = protoLoader.loadSync(path.join(__dirname, './protos/products.proto'));
+const productsProto = grpc.loadPackageDefinition(packageDefinition);
+
 const fs = require("fs");
 const { Pool } = require('pg');
 
@@ -18,35 +24,25 @@ const pool = new Pool({
     port: config.PG_PORT
 })
 
-async function connectToDatabase() {
-    try {
-    await pool.connect();
-        console.log('Connected to the PostgreSQL database!');
-    } catch (error) {
-        console.error('Error connecting to the PostgreSQL database:', error);
+async function getBooks(_, callback) {
+    const client = await pool.connect();
+    const result = await client.query('SELECT * FROM book');
+    client.release();
+    const books = result.rows;
+    if (result) {
+        callback(null, { books: books});
     }
+    else {
+        callback({
+            message: 'Books not found',
+            code: grpc.status.INTERNAL
+        });
+    }
+
 }
 
-// create a function that retrieves list of books from the database reader and table books and return an array of objects containing the book details
-const getBooks = async () => {  
-
-}
-
-// just to keep container running. to be removed
-const server = require("express")();
-
-server.listen(3002, async () => { 
-    console.log('Server is running on port 3002');
-});
-
-server.get("/", async (req, res) => {
-    try {
-        const client = await pool.connect();
-        const result = await client.query('SELECT * FROM book');
-        client.release();
-        res.json({ "response": "connection established product from developer!", "DB": result.rows });
-      } catch (error) {
-        console.error('Error executing query:', error);
-        res.status(500).json({ error: 'Internal server error' });
-      }
+const server = new grpc.Server();
+server.addService(productsProto.Products.service, { GetBooks: getBooks });
+server.bindAsync('0.0.0.0:50051', grpc.ServerCredentials.createInsecure(), () => {
+    server.start();
 });
