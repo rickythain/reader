@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+service Products {
+    rpc GetBooks (Empty) returns (BookList) {}
+}
+
+message Empty {}
+
+message Book {
+    string isbn = 1;
+    string title = 2;
+}
+
+message BookList {
+    repeated Book books = 1;
+}
