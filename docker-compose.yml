@@ -25,11 +25,17 @@ services:
       - 3000:3000
   api:
     container_name: api
+    depends_on:
+      - product
     image: api
     build:
       context: ./server/api
+    volumes:
+      - ./protos:/api/protos
     ports:
-      - 3001:3001
+      - 5000:5000
+    networks:
+      - network-general
   product:
     container_name: product
     depends_on:
