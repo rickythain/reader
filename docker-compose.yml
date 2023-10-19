@@ -48,8 +48,6 @@ services:
       - ./protos:/product/protos
     environment:
       - CONFIG_FILE_PATH=/product/.config.json
-    ports:
-      - 50051:50051
     networks:
       - network-general
 volumes:
