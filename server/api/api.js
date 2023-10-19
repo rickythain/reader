@@ -20,7 +20,6 @@ function getBooks() {
             if (err) {
                 reject(err);
             } else {
-                console.log('got a list of books...');
                 resolve(books);
             }
         });
