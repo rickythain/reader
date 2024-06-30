@@ -1,8 +1,9 @@
 {
     "name": "api-node",
     "dependencies": {
-        "express": "^4.17.1",
         "@grpc/grpc-js": "latest",
-        "@grpc/proto-loader": "0.7.8"
+        "@grpc/proto-loader": "0.7.8",
+        "cors": "^2.8.5",
+        "express": "^4.17.1"
     }
 }
