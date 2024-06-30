@@ -20,9 +20,14 @@ services:
     build:
       context: ./client
     volumes: 
-      - ./client/src:/client/src
+      - ./client:/client
+      - /client/node_modules
     ports:
       - 3000:3000
+    networks:
+      - network-general
+    environment:
+      - CHOKIDAR_USEPOLLING=true
   api:
     container_name: api
     depends_on:
