@@ -1,0 +1,29 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #faf9f7;
+}
+
+.content {
+  padding: 2rem;
+}
+
+.title {
+  color: #cf854b;
+  font-family: 'League Spartan';
+}
+
+.subtitle {
+  font-family: 'Glacial Indifference';
+}
