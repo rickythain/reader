@@ -19,6 +19,9 @@ body, html {
   padding: 2rem;
 }
 
+.headline {
+}
+
 .title {
   color: #cf854b;
   font-family: 'League Spartan';
@@ -26,4 +29,8 @@ body, html {
 
 .subtitle {
   font-family: 'Glacial Indifference';
+}
+
+.logo {
+  max-width: 60vw;
 }
