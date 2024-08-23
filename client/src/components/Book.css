@@ -1,0 +1,38 @@
+.book {
+  width: 50vw;
+  height: 75vw;
+  background-color: #c0c5c1;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 20px;
+}
+
+.bookImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 75%;
+  background-color: #faf9f7;
+  border-radius: 20px 20px 0 0;
+  padding: 10px;
+  font-family: 'Glacial Indifference';
+  text-transform: uppercase;
+  font-size: 6vw;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bookInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 25%;
+  background-color: #c0c5c1;
+  border-radius: 0 0 20px 20px;
+  padding: 10px;
+  font-size: 4vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

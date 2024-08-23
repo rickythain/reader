@@ -1,5 +1,6 @@
 import logo from '../logo.svg';
 import '../App.css';
+import './Home.css'
 
 import React, { useEffect, useState } from 'react';
 
@@ -23,9 +24,11 @@ const Home = () => {
   return (
     <div className="App">
       <Header />
+      <div className='bookSection'>
       {books.map((item, index) => (
         <Book key={item + index} book={item}></Book>
       ))}
+      </div>
     </div>
   );
 }

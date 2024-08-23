@@ -1,0 +1,6 @@
+.bookSection {
+  background-color: #faf9f7;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
